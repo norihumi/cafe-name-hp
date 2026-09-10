@@ -171,6 +171,27 @@ a{
 }
 
 /* =======================================
+    スクロールアニメーション (フェードイン)
+======================================= */
+/* 【初期状態】透明にして、少し下に落としておく */
+.js-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* 【発火時】画面に入ったらクラスが付与されて元に戻る */
+.js-fade.is-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 【時間差（遅延）】文章側に付与して、画像より少し遅れて表示させる */
+.js-fade-delay.is-show {
+    transition-delay: 0.3s; /* 0.3秒遅れてふわっと出る */
+}
+
+/* =======================================
     メインビジュアル (MV)
 ======================================= */
 .mv {
@@ -249,3 +270,95 @@ a{
         padding: 12px 20px;
     }
 }
+
+/* =======================================
+    お店のこだわり (About)
+======================================= */
+.about{
+    width : 100%;
+    background-color : #f5efeb;
+    padding : 80px 0;
+}
+
+.about__inner{
+    max-width : 1000px;
+    margin : 0 auto;
+    padding : 20px;
+}
+
+.about__header{
+    text-align : center;
+    margin-bottom : 40px;
+}
+
+.about__title{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+
+.about__title-en{
+    font-size : 2.5rem;
+    font-weight : bold;
+    letter-spacing : 0.1em;
+}
+
+.about__title-ja{
+    font-size : 0.9rem;
+    letter-spacing : 0.05em;
+    margin-top : 8px;
+}
+
+.about__info{
+    display : flex;
+    align-items : center;
+    gap : 50px;
+}
+
+.about__imgbox{
+    flex : 1;
+}
+
+.about__img{
+    width : 100%;
+    height : auto;
+    border-radius : 10px;
+
+    /* 画像の下にできるミリ単位の隙間を消す */
+    display: block;
+}
+
+.about__textbox{
+    flex : 1;
+}
+
+.about__copy{
+    font-size : 1.6rem;
+    font-weight : bold;
+    margin-bottom : 24px;
+    letter-spacing : 0.05em;
+    line-height : 1.6;
+}
+
+.about__text{
+    font-size : 0.95rem;
+    line-height : 1.9;
+    letter-spacing : 0.03em;
+    color : #333333;
+}
+
+@media(max-width : 768px){
+    .about__inner{
+        padding : 40px 20px;
+    }
+
+    .about__title-en{
+        font-size : 30px;
+    }
+
+    .about__info{
+        flex-direction : column;
+        gap : 30px;
+    }
+}
+
