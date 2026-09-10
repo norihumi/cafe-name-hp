@@ -382,6 +382,111 @@
             </div>
         </section>
 
+        <!-- =========================================
+            お問い合わせ
+        ========================================== -->
+        <section class="cta">
+            <div class="cta__inner">
+
+                <div class="cta__header">
+                    <h2 class="cta__title">
+                        <span class="cta__title-en">
+                            Contact
+                        </span>
+                        <span class="cta__title-ja">
+                            お問い合わせ
+                        </span>
+                    </h2>
+                </div>
+
+                <p class="cta__text">
+                    ご予約・ご質問など、お気軽にお問い合わせください。
+                </p>
+
+                <form action="#" method="post" class="cta__form">
+                    <dl class="cta__list">
+
+                        <!-- 名前 -->
+                        <div class="cta__item">
+                            <dt class="cta__label">
+                                <label for="name">
+                                    お名前
+                                </label>
+                                <span class="cta__badge cta__badge--required">
+                                    必須
+                                </span>
+                            </dt>
+                            <dd class="cta__input">
+                                <input type="text" id="name" name="name" placeholder="山田太郎" required>
+                            </dd>
+                        </div>
+
+                        <div class="cta__item">
+                            <dt class="cta__label">
+                                <label for="mail">
+                                    メールアドレス
+                                </label>
+                                <span class="cta__badge cta__badge--required">
+                                    必須
+                                </span>
+                            </dt>
+                            <dd class="cta__input">
+                                <input type="email" id="mail" name="mail" placeholder="example@cafe.com" required>
+                            </dd>
+                        </div>
+
+                        <div class="cta__item">
+                            <dt class="cta__label">
+                                <label for="subject">
+                                    件名
+                                </label>
+                                <span class="cta__badge cta__badge--optional">
+                                    選択
+                                </span>
+                            </dt>
+                            <dd class="cta__input">
+                                <select name="subject" id="subject" class="cta__subject">
+                                    <option value="reservation">
+                                        ご予約について
+                                    </option>
+                                    <option value="menu">
+                                        メニューに関する質問
+                                    </option>
+                                    <option value="media">
+                                        取材について
+                                    </option>
+                                    <option value="etc">
+                                        その他
+                                    </option>
+                                </select>
+                            </dd>
+                        </div>
+
+                        <!-- 内容 -->
+                        <div class="cta__item">
+                            <dt class="cta__label">
+                                <label for="message">
+                                    内容
+                                </label>
+                                <span class="cta__badge cta__badge--required">
+                                    必須
+                                </span>
+                            </dt>
+                            <dd class="cta__input">
+                                <textarea name="message" id="message" class="cta__message"></textarea>
+                            </dd>
+                        </div>
+                    </dl>
+
+                    <div class="cta__buttonbox">
+                        <button type="submit" class="cta__submit">
+                            送信
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
     </main>
 
     <script src="js/main.js"></script>

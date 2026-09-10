@@ -716,3 +716,161 @@ a{
         height: 280px;
     }
 }
+
+/* =======================================
+    お問い合わせ (Cta)
+======================================= */
+.cta{
+    width : 100%;
+    background-color : #f5efeb;
+    padding : 80px 0;
+}
+
+.cta__inner{
+    max-width : 1000px;
+    margin : 0 auto;
+    padding : 0 20px;
+    text-align : center;
+}
+
+.cta__title{
+    display : flex;
+    flex-direction : column;
+    margin-bottom : 10px;
+}
+
+.cta__title-en{
+    font-size : 2.5rem;
+    font-weight : bold;
+    letter-spacing : 0.1px;
+}
+
+.cta__title-ja{
+    font-size : 0.9rem;
+    letter-spacing : 0.05em;
+    margin-top : 8px;
+}
+
+.cta__text{
+    letter-spacing : 0.5px;
+    margin-bottom : 30px;
+}
+
+.cta__form{
+    display : inline-block;
+    width : 100%;
+    max-width : 650px;
+    margin : 0 auto;
+    
+    /* フォーム内は左寄せ */
+    text-align: left;
+}
+
+.cta__item{
+    display : flex;
+    align-items : center;
+    gap : 20px;
+    margin-bottom : 20px;
+}
+
+/* 内容（textarea）の時はラベルを上揃えにする */
+.cta__item:has(.cta__message) {
+    align-items: flex-start;
+}
+
+.cta__label{
+    flex-shrink : 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 180px; /* ラベルエリアの幅を確保 */
+}
+
+.cta__label label {
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.cta__badge{
+    color : #ffffff;
+    font-size: 0.75rem;
+    font-weight : bold;
+    border-radius : 4px;
+    padding : 2px 8px;
+    white-space: nowrap;
+}
+
+.cta__badge--required{
+    background-color : #c86b5e;
+}
+
+.cta__badge--optional{
+    background-color : #8a817c;
+}
+
+.cta__input{
+    flex-shrink : 1;
+    width : 100%;
+}
+
+/* --- 入力フィールド共通設定 --- */
+.cta__input input[type="text"],
+.cta__input input[type="email"],
+.cta__subject,
+.cta__message {
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px solid #e0d8d0;
+    border-radius: 6px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333333;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.cta__message {
+    height: 150px;
+    resize: vertical; /* ユーザーが縦方向にのみサイズ調整可能 */
+}
+
+/* --- 送信ボタン --- */
+.cta__buttonbox {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta__submit{
+    color : #ffffff;
+    font-weight : bold;
+    font-size : 1.1rem;
+    background-color : #fc9f33;
+    border : none;
+    width : 160px;
+    height : 50px;
+    border-radius : 50px;
+    cursor : pointer;
+    transition : all 0.3s ease;
+}
+
+.cta__submit:hover{
+    opacity : 0.8;
+    transform : translateY(-2px);
+}
+
+@media(max-width : 768px){
+    .cta__item {
+        flex-direction: column; /* スマホでは縦並びに */
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .cta__label {
+        width: 100%;
+    }
+
+    .cta__text {
+        font-size: 0.9rem;
+    }
+}
