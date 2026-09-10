@@ -874,3 +874,77 @@ a{
         font-size: 0.9rem;
     }
 }
+
+/* =======================================
+    フッター
+======================================= */
+.footer{
+    width : 100%;
+    background-color : #2b241f;
+    padding : 50px 20px 30px;
+}
+
+.footer__inner{
+    max-width : 1000px;
+    margin : 0 auto;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+
+.footer__logo{
+    margin-bottom : 20px;
+}
+
+.footer__nav{
+    margin-bottom : 30px;
+}
+
+.footer__list{
+    display : flex;
+    align-items : center;
+    list-style : none;
+    padding : 0;
+    margin : 0;
+}
+
+.footer__item{
+    color : #ffffff;
+    font-size : 1.05rem;
+}
+
+.footer__item a:hover{
+    opacity : 0.7;
+}
+
+.footer__item:not(:last-child)::after{
+    content : "|";
+    margin : 0 20px; /* 左右に20pxずつの隙間を作る */
+    color : #ffffff;
+    opacity : 0.6; /* 縦線を少し薄くすると文字が引き立ちます */
+}
+
+.footer__copyrights{
+    color : #ffffff;
+    font-size : 0.85rem;
+    letter-spacing : 2px;
+    opacity : 0.8;
+}
+
+@media (max-width: 768px) {
+    .footer__item {
+        font-size: 0.85rem; /* 文字サイズを調整 */
+    }
+
+    /* 縦線（|）の左右の余白を少し狭めて画面内に収めやすくする */
+    .footer__item:not(:last-child)::after {
+        margin: 0 10px;
+    }
+
+    /* 万が一画面幅からはみ出た場合に綺麗に折り返す設定 */
+    .footer__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 10px; /* 折り返した際の上下の間隔 */
+    }
+}
