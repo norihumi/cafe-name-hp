@@ -490,3 +490,111 @@ a{
 .menu__card:nth-child(4) {
     transition-delay: 0.45s; 
 }
+
+/* =======================================
+    お知らせ (News)
+======================================= */
+.news{
+    width : 100%;
+    background-color : #f5efeb;
+    padding : 80px 0;
+}
+
+.news__inner{
+    max-width : 1000px;
+    margin : 0 auto;
+
+    /* スマホ画面で端にくっつかないための左右余白 */
+    padding : 0 20px;
+}
+
+.news__header{
+    margin-bottom : 40px;
+}
+
+.news__title{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+
+.news__title-en{
+    font-size : 2.5rem;
+    font-weight : bold;
+    letter-spacing : 0.1em;
+}
+
+.news__title-ja{
+    font-size : 0.9rem;
+    letter-spacing : 0.05em;
+    margin-top : 8px;
+}
+
+.news__list{
+    border-top : 1px dashed #746060;
+    padding : 0;
+}
+
+.news__item{
+    border-bottom : 1px dashed #746060;
+}
+
+.news__link{
+    display : flex;
+    align-items : center;
+    gap : 20px;
+
+    padding: 20px 0; /* 上下の余白をここで調整 */
+    color: inherit; /* 下階層へ文字色を継承 */
+    text-decoration: none; /* リンクの下線を消す */
+    transition: opacity 0.3s; /* ホバー時のアニメーション */
+}
+
+/* マウスを載せた時にほんのり透明にする演出 */
+.news__link:hover {
+    opacity: 0.7;
+}
+
+.news__date{
+    flex-shrink : 0;
+    font-size : 0.9rem;
+    color : #555555;
+}
+
+.news__badge{
+    flex-shrink : 0;
+    width : 80px;
+    text-align : center;
+    background-color : #d1d5db;
+    font-size : 0.75rem;
+    font-weight : bold;
+    padding : 4px 0;
+    border-radius : 20px;
+    color : #ffffff;
+}
+
+.news__badge.news__badge--blue{
+    background-color : #acacd5;
+}
+
+.news__badge.news__badge--red{
+    background-color : #d5acb1;
+}
+
+.news__content{
+    font-size : 0.95rem;
+    color : #333333;
+}
+
+/* --- スマホ対応（レスポンシブ） --- */
+@media (max-width: 768px) {
+    .news__link {
+        flex-wrap: wrap; /* 画面が狭くなったら折り返す */
+        gap: 10px;
+    }
+
+    .news__content {
+        width: 100%; /* タイトルを次の行へ改行させる */
+        margin-top: 5px;
+    }
+}
