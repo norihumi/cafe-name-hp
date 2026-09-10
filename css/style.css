@@ -1,0 +1,171 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+/* ページ全体のスクロールを滑らかにする */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 固定ヘッダーがあるサイトの共通設定 */
+:target {
+    scroll-margin-top: 80px; /* 固定ヘッダーの高さに合わせる */
+}
+
+body{
+    color : #4a3b32;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+ul{
+    list-style : none;
+}
+
+a{
+    color : inherit;
+    text-decoration : none;
+}
+
+/* =======================================
+    共通パーツ
+======================================= */
+/* --- ヘッダー (header) ---*/
+.header{
+    width : 100%;
+    background-color : #f5efeb;
+    z-index : 100;
+
+    /* スクロールしても上部に固定 */
+    position: sticky;
+    top : 0;
+}
+
+.header__inner{
+    max-width : 1000px;
+    height : 100px;
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+    margin : 0 auto;
+
+    /* 端に寄りすぎないよう左右余白を設定 */
+    padding: 0 20px;
+}
+
+.header__logo{
+    padding-left : 15px;
+}
+
+/* ロゴのサイズ調整 */
+.header__logo img {
+    width: 160px; /* 表示させたいサイズに合わせて調整 */
+    height: auto;
+    display: block;
+}
+
+.header__list{
+    display : flex;
+    align-items : center;
+    gap : 40px;
+}
+
+.header__item{
+    font-size : 20px;
+    font-weight : bold;
+}
+
+.header__item:not(:last-child) a:hover{
+    color : #fc9f33;
+    transition : color 0.3s ease;
+}
+
+.header__item:last-child{
+    display : inline-block;
+    color : #ffffff;
+    background-color : #fc9f33;
+    padding : 12px 20px;
+    border-radius : 10px;
+    transition : opacity 0.3s ease;
+}
+
+.header__item:last-child:hover{
+    opacity : 0.8;
+}
+
+.header__hamburger{
+    display : none;
+}
+
+@media(max-width : 768px){
+    /* ハンバーガーボタンを表示 */
+    .header__hamburger{
+        display : flex;
+        flex-direction : column;
+        justify-content : space-between;
+        width : 30px;
+        height : 22px;
+        background : transparent;
+        border : none;
+        cursor : pointer;
+        z-index : 101;
+        padding : 0;
+    }
+
+    /* 三本線のデザイン */
+    .header__hamburger span{
+        width : 100%;
+        height : 2px;
+        background-color : #4a3b32;
+        border-radius : 2px;
+        transition : all 0.3s ease;
+    }
+
+    /* スマホ用全画面メニュー */
+    .header__nav{
+        position : fixed;
+        top : 0;
+        right : -100%;
+        width : 100%;
+        height : 100vh;
+        background-color : #f5efeb;
+        padding : 100px 20px 40px;
+        transition : right 0.3s ease;
+        z-index : 99;
+    }
+
+    .header__list{
+        flex-direction : column;
+        gap : 20px;
+        align-items : center;
+    }
+
+    .header__item{
+        width : 100%;
+        text-align : center;
+    }
+
+    .header__item a{
+        display : block;
+        padding : 12px 0;
+        font-size : 1.1rem;
+    }
+
+    /* 開いた時のアニメーション（JSでis-openが付与される） */
+    .header__nav.is-open{
+        right : 0;
+    }
+
+    /* 「×」印への変形アニメーション */
+    .header__hamburger.is-open span:nth-child(1){
+        transform : translateY(10px) rotate(45deg);
+    }
+
+    .header__hamburger.is-open span:nth-child(2){
+        opacity : 0;
+    }
+    .header__hamburger.is-open span:nth-child(3){
+        transform : translateY(-10px) rotate(-45deg);
+    }
+}
