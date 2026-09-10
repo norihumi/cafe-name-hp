@@ -38,7 +38,7 @@ function nextSlide() {
 setInterval(nextSlide, 4000);
 
 // =======================================
-// こだわり フェードイン
+// こだわり・メニュー フェードイン
 // =======================================
 document.addEventListener('DOMContentLoaded', () => {
     // 監視対象の要素（.js-fade が付いた要素）をすべて取得
