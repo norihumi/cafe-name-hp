@@ -598,3 +598,121 @@ a{
         margin-top: 5px;
     }
 }
+
+/* =======================================
+    アクセス (Access)
+======================================= */
+.access{
+    width : 100%;
+    background-color : #f4eee8;
+    padding : 80px 0;
+}
+
+.access__inner{
+    max-width : 1000px;
+    margin : 0 auto;
+    padding : 0 20px;
+}
+
+.access__title{
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+}
+
+.access__title-en{
+    font-size : 2.5rem;
+    font-weight : bold;
+    letter-spacing : 0.1em;
+}
+
+.access__title-ja{
+    font-size : 0.9rem;
+    letter-spacing : 0.05em;
+    margin-top : 8px;
+}
+
+.access__info{
+    /* 全体の幅を絞って中央寄せ */
+    max-width: 650px;
+
+    margin : 40px auto;
+    padding : 20px 0;
+    border-top : 1px solid #4a3b32;
+    border-bottom : 1px solid #4a3b32;
+}
+
+.access__info-row{
+    display : flex;
+    align-items : center;
+    gap : 30px;
+    margin-bottom : 15px;
+}
+
+/* 最後の行の余白を消す */
+.access__info-row:last-child {
+    margin-bottom: 0;
+}
+
+.access__info-term{
+    flex-shrink : 0;
+    font-size : 1rem;
+    font-weight : bold;
+    width : 80px;
+}
+
+.access__info-desc{
+    font-size : 1rem;
+    flex-shrink : 1;
+}
+
+/* --- 地図エリア（ここが中央配置のポイント） --- */
+.access__map {
+    max-width: 650px; /* 店舗情報と幅を揃える */
+    margin: 0 auto;   /* 外枠を中央に配置 */
+}
+
+.access__map iframe {
+    display: block;   /* ブロック要素化 */
+    width: 100%;      /* 親要素（650px）の幅いっぱいに広げる */
+    height: 350px;
+    border-radius: 16px; /* デザインカンプのような角丸をつける */
+}
+
+/* --- スマホ対応（768px以下） --- */
+@media (max-width: 768px) {
+    /* セクション全体の上下パディングを少し狭く */
+    .access {
+        padding: 60px 0;
+    }
+
+    /* 店舗情報エリアの余白調整 */
+    .access__info {
+        margin: 30px auto;
+        padding: 15px 0;
+    }
+
+    /* スマホでは項目と内容を縦並び（折り返し）にする */
+    .access__info-row {
+        flex-direction: column;
+        align-items: flex-start; /* 左揃え */
+        gap: 4px; /* 項目名と内容の間隔 */
+        margin-bottom: 12px;
+    }
+
+    /* 項目名（店舗名、住所など）の幅固定を解除 */
+    .access__info-term {
+        width: auto;
+        font-size: 0.9rem;
+        color: #746060; /* 項目名を少し落ち着いた色にすると見やすい */
+    }
+
+    .access__info-desc {
+        font-size: 0.95rem;
+    }
+
+    /* 地図の高さをスマホ用にすこし浅くする */
+    .access__map iframe {
+        height: 280px;
+    }
+}
